@@ -38,3 +38,7 @@ Kindly modify the files as needed.
 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
