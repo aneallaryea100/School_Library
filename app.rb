@@ -42,8 +42,7 @@ class App
     @people << teacher
   end
 
-
-  def create_person_type(type, age, name)
+  def create_person_type(type, age, name) # rubocop:disable Metrics/ClassLength
     case type
     when 1
       permission = ''
