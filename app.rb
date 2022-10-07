@@ -3,7 +3,7 @@ require './teacher'
 require './student'
 require './rental'
 
-class App
+class App # rubocop:disable Metrics/ClassLength
   attr_reader :rentals
 
   def initialize
@@ -42,7 +42,7 @@ class App
     @people << teacher
   end
 
-  def create_person_type(type, age, name) # rubocop:disable Metrics/ClassLength
+  def create_person_type(type, age, name) 
     case type
     when 1
       permission = ''
