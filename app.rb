@@ -73,7 +73,7 @@ class App
     name = gets.chomp
     create_person_type(person_type, age, name)
     person = person_type == 1 ? 'Student' : 'Teacher'
-    puts "#{person} created successfully."
+    puts "#{person} created successfully\n"
   end
 
   # create a book
@@ -139,7 +139,7 @@ class App
   # list all rentals for a given person id
 
   def rentals_person_id
-    puts 'ID of person: '
+   # puts 'ID of person: '
     id = gets.chomp.to_i
     person = nil
     @people.each { |pers| person = pers if pers.id == id }
