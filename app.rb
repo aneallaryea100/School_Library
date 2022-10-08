@@ -3,7 +3,7 @@ require './teacher'
 require './student'
 require './rental'
 
-class App # rubocop:disable Metrics/ClassLength
+class App
   attr_reader :rentals
 
   def initialize
@@ -42,28 +42,21 @@ class App # rubocop:disable Metrics/ClassLength
     @people << teacher
   end
 
-  def create_person_type(type, age, name) 
+  def create_person_type(type, age, name)
     case type
     when 1
       permission = ''
       until %w[Y N].include?(permission)
         puts 'Has parent permission? [Y/N]:'
-        permission = gets.chomp
-        case permission.downcase
-        when 'y'
-          true
-        else
-          false
-        end
+        permission = gets.chomp.capitalize
       end
-      student = Student.new(nil, age, name, parent_permission: permission == 'y')
+      student = Student.new(nil, age, name, parent_permission: permission == 'Y')
       add_student(student)
     when 2
       puts 'Specialization:'
       specialization = gets.chomp.capitalize
       teacher = Teacher.new(specialization, age, name)
       add_teacher(teacher)
-
     end
   end
 
