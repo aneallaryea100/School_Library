@@ -100,18 +100,18 @@ class App
 
   # create a rental
   def add_rental(rental)
-    @rental << rental
+    @rentals << rental
   end
 
   def create_rental
     i_book = nil
     i_person = nil
-    until (0..@book.length - 1).include? i_book
+    until (0..@books.length - 1).include? i_book
       puts 'Select a book from the following list by number'
       list_books
       i_book = gets.chomp.to_i
     end
-    until (0..@people.length - 1).include? i_book
+    until (0..@people.length - 1).include? i_person
       puts 'Select a book from the following list by number'
       list_people
       i_person = gets.chomp.to_i
@@ -142,7 +142,7 @@ class App
     puts 'ID of person: '
     id = gets.chomp.to_i
     person = nil
-    @person.each { |pers| person = pers if pers.id == id }
+    @people.each { |pers| person = pers if pers.id == id }
     if person.nil?
       puts "There is not person with the id #{id} registered"
     elsif person.rentals.length.zero?
