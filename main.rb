@@ -38,7 +38,7 @@ class Main
     when 6
       @app.rentals_person_id
     else
-      puts 'Good Bye'
+      puts 'Thank you for using this app!'
     end
   end
 end
