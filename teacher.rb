@@ -8,4 +8,14 @@ class Teacher < Person
   def can_use_services?
     true
   end
+
+  def self.create_teacher
+    puts 'Age: '
+    age = gets.chomp.to_i
+    print 'Name: '
+    name = gets.chomp
+    puts 'Specialization: '
+    specialization = gets.chomp.capitalize
+    Teacher.new(specialization, age, name)
+  end
 end
