@@ -5,12 +5,12 @@ class Rental
   attr_accessor :date
   attr_reader :book, :person
 
-  def initialize(date, person, book) 
+  def initialize(date, person, book)
     @date = date
 
     @book = book
     book.rentals << self
-    
+
     @person = person
     person.rentals << self
   end
@@ -51,17 +51,16 @@ class Rental
     print 'ID of person: '
     id = gets.chomp.to_i
     people.each do |person|
-    if person.nil?
-      puts "There is not person with the id #{id} registered"
-    else
-      puts 'Rentals:'
-      rentals.each do |rental|
-        puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
+      if person.nil?
+        puts "There is not person with the id #{id} registered"
+      else
+        puts 'Rentals:'
+        rentals.each do |rental|
+          puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
+        end
       end
     end
-    end
   end
-
 
   def self.rentals_person_id(people, rentals)
     if rentals.empty?

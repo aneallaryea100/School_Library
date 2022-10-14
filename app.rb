@@ -24,7 +24,7 @@ class App
     puts '7. Exit'
   end
 
-  def enter_options(option)
+  def enter_options(option) # rubocop:disable Metrics/CyclomaticComplexity
     case option
     when 1 then Book.list_books(@books)
     when 2 then Person.list_people(@people)
